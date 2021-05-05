@@ -79,4 +79,10 @@ describe('Basic ERC20 interactions', async () => {
     expect(receiverBalance.toNumber()).to.equal(100)
     expect(senderBalance.toNumber()).to.equal(900)
   })
+
+  it('should revert if trying to transfer too much', async () => {
+    await expect(
+      ERC20.transfer(other.address, initialAmount * 2)
+    ).to.be.revertedWith('insufficient balance')
+  })
 })

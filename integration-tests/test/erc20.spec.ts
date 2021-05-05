@@ -1,8 +1,11 @@
 import { Contract, ContractFactory, Wallet } from 'ethers'
 import { ethers } from 'hardhat'
-import { expect } from 'chai'
+import chai, { expect } from 'chai'
 import { GWEI } from './shared/utils'
 import { OptimismEnv } from './shared/env'
+import { solidity } from 'ethereum-waffle'
+
+chai.use(solidity)
 
 describe('Basic ERC20 interactions', async () => {
   const initialAmount = 1000

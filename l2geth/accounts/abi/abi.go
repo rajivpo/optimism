@@ -195,7 +195,7 @@ func (abi *ABI) EventByID(topic common.Hash) (*Event, error) {
 	return nil, fmt.Errorf("no event with id: %#x", topic.Hex())
 }
 
-// revertSelector is a special function selector for revert reason unpacking.
+// RevertSelector is a special function selector for revert reason unpacking.
 var RevertSelector = crypto.Keccak256([]byte("Error(string)"))[:4]
 
 // UnpackRevert resolves the abi-encoded revert reason. According to the solidity

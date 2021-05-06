@@ -199,7 +199,7 @@ func (abi *ABI) EventByID(topic common.Hash) (*Event, error) {
 var RevertSelector = crypto.Keccak256([]byte("Error(string)"))[:4]
 
 // UnpackRevert resolves the abi-encoded revert reason. According to the solidity
-// spec https://solidity.readthedocs.io/en/latest/control-structures.html#revert,
+// docs https://docs.soliditylang.org/en/v0.8.4/control-structures.html#revert,
 // the provided revert reason is abi-encoded as if it were a call to a function
 // `Error(string)`. So it's a special tool for it.
 func UnpackRevert(data []byte) (string, error) {

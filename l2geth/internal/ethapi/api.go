@@ -1100,9 +1100,9 @@ func legacyDoEstimateGas(ctx context.Context, b Backend, args CallArgs, blockNrO
 	// Execute the binary search and hone in on an executable gas limit
 	for lo+1 < hi {
 		mid := (hi + lo) / 2
-		failed, _ := executable(mid)
+		ok, _ := executable(mid)
 
-		if failed {
+		if !ok {
 			lo = mid
 		} else {
 			hi = mid
@@ -1110,9 +1110,9 @@ func legacyDoEstimateGas(ctx context.Context, b Backend, args CallArgs, blockNrO
 	}
 	// Reject the transaction as invalid if it still fails at the highest allowance
 	if hi == cap {
-		failed, res := executable(hi)
-		if failed {
-			if res != nil && len(res) >= 4 && bytes.Equal(res[:4], abi.RevertSelector) {
+		ok, res := executable(hi)
+		if !ok {
+			if len(res) >= 4 && bytes.Equal(res[:4], abi.RevertSelector) {
 				reason, errUnpack := abi.UnpackRevert(res)
 				err := errors.New("execution reverted")
 				if errUnpack == nil {

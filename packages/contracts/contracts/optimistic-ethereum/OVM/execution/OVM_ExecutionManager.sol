@@ -1857,7 +1857,7 @@ contract OVM_ExecutionManager is iOVM_ExecutionManager, Lib_AddressResolver {
         messageRecord.nuisanceGasLeft = DEFAULT_UINT256;
 
         // Reset the ovmStateManager.
-        ovmStateManager = iOVM_StateManager(address(0));
+        ovmStateManager = iOVM_StateManager(DEFAULT_ADDRESS);
     }
 
     /*****************************

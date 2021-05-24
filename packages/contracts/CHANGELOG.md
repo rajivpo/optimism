@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.4.0
+
+### Minor Changes
+
+- d2c7489: Disables EOA contract upgrades until further notice
+- 07427ae: Update AddressSet event to speed search up a bit. Breaks AddressSet API.
+
+### Patch Changes
+
+- 45032d2: Add L2ChugSplashDeployer contract and tests
+- 7dc15c8: Use dashes instead of colons in contract names
+- 138063b: enables l2 upgrades to be initiated by an l1 to l2 message
+- 8d477be: Removed upgrade cancellation functions
+- b496ff7: Introduces the congestion price oracle contract
+- b9c5e81: Disable upgradability from the ECDSA account instead of the EOA proxy.
+- 5e5d4a1: Separates logic for getting state dumps and making state dumps so we can bundle for browser
+
 ## 0.3.2
 
 ### Patch Changes

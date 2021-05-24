@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.3
+
+### Patch Changes
+
+- 7dc15c8: Use dashes instead of colons in contract names
+- Updated dependencies [d2c7489]
+- Updated dependencies [45032d2]
+- Updated dependencies [7dc15c8]
+- Updated dependencies [07427ae]
+- Updated dependencies [138063b]
+- Updated dependencies [8d477be]
+- Updated dependencies [b496ff7]
+- Updated dependencies [b9c5e81]
+- Updated dependencies [5e5d4a1]
+  - @eth-optimism/contracts@0.4.0
+
 ## 0.3.2
 
 ### Patch Changes
